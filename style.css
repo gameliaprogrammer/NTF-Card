@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --main-BG: hsl(217, 54%, 11%);
+    --card-BG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+body
+{
+    background-color:var(--main-BG) ;
+    font-family: 'outfit', sans-serif;
+}
+.Card
+{
+    background-color:var(--card-BG);
+    height: 470px;
+    width: 300px;
+    margin: 60px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 15px #00000094;
+}
+.Card:hover .photo::before , .Card:hover .photo::after 
+{
+display: block;
+cursor: pointer;
+}
+.Card .photo
+{
+width: 100%;
+height: 250px;
+border-radius: 8px;
+position: relative;
+transition: all ease 0.5s;
+overflow: hidden;
+}
+.Card .photo::before
+{
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    background-color:hsl(178deg 100% 50% /29%);
+    display: none;
+}
+.Card .photo::after
+{
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url(imgs/icon-view.svg);
+    display: none;
+}
+.Card .photo img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.Card .detail
+{
+margin-top: 18px;
+}
+.Card:hover .detail .title
+{
+    color:hsl(178deg 100% 50% /29%); 
+}
+.detail .title
+{
+color: var(--White);
+font-size: 22px;
+font-weight: bold;
+transition: 0.5s;
+}
+.detail .subtitle
+{
+    line-height: 1.4;
+    color: slategray;
+
+}
+.detail .date
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.date span
+{
+    width: 34%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date .eth
+{
+    color: cyan;
+    font-weight: bold;
+}
+.date .time
+{
+    color: slategray ;
+    margin-bottom: 10px;
+}
+.Card .avatar
+{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+.Card .avatar img
+{
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+    border:1px solid white ;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.Card .avatar .subtitle
+{
+font-weight: bold;
+color: slategray;
+}
+.Card .avatar .subtitle span
+{
+    color: var(--White);
+    transition: 0.5s;
+}
+.Card .avatar .subtitle span:hover
+{
+    color:hsl(178deg 100% 50% /29%);  
+    cursor: pointer;
+}
